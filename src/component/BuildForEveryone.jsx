@@ -7,7 +7,7 @@ const BuildForEveryone = () => {
         {/* Title */}
         <div className="text-center mb-16">
          <div className='relative  w-[418px] h-[64px] mx-auto  mb-6'> 
-            <h2 className="text-[48px] font-bold  text-black">Build for Everyone</h2>
+            <h2 className="text-[48px] font-bold text-shadow text-black">Build for Everyone</h2>
             <img src="/images/sign.png" alt="" className='absolute -right-4 bottom-[-12px] ' />
          </div>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">

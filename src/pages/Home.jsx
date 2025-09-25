@@ -4,6 +4,8 @@ import Navbar from '../component/Navbar';
 import Services from '../component/Services';
 import BuildForEveryone from '../component/BuildForEveryone';
 import Question from '../component/Question';
+import Footer from '../component/Footer';
+import Testimonials from '../component/Testimonials';
 
 const Home = () => {
     return (
@@ -12,7 +14,9 @@ const Home = () => {
             <Hero></Hero>
             <Services></Services>
             <BuildForEveryone></BuildForEveryone>
+            <Testimonials></Testimonials>
             <Question></Question>
+            <Footer></Footer>
         </>
     );
 };
