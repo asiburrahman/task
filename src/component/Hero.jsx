@@ -1,0 +1,45 @@
+import React from "react";
+
+const Hero = () => {
+  return (
+    <section className="w-[1440px] bg-white">
+      <div className="max-w-[1440px] mx-auto flex items-center justify-between px-[120px] py-[100px]">
+        {/* Left Content */}
+        <div className="w-[655px] h-[385px] flex flex-col justify-center gap-6">
+          <h1 className="text-[64px] font-extrabold leading-[72px] text-gray-900">
+            All Your Jobs <br /> One Smart App
+          </h1>
+          <p className="text-gray-600 text-lg leading-relaxed">
+            Built for business owners, employees, and clients to streamline job
+            scheduling, service tracking, and team management in one powerful
+            app.
+          </p>
+          {/* Buttons */}
+          <div className="flex gap-4 mt-6">
+            <img
+              src="/images/appstore.png"
+              alt="Download on App Store"
+              className="h-12"
+            />
+            <img
+              src="/images/googleplay.png"
+              alt="Get it on Google Play"
+              className="h-12"
+            />
+          </div>
+        </div>
+
+        {/* Right Image */}
+        <div>
+          <img
+            src="/images/hand-phone.png"
+            alt="Mobile App Preview"
+            className="w-[720px] h-[656px] object-contain"
+          />
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Hero;
