@@ -58,7 +58,7 @@ This project provides secure **user registration, email verification, login, and
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-username/manageflat.git
+git clone https://github.com/asiburrahman/task-backend
 cd backend
 ```
 
@@ -82,7 +82,7 @@ EMAIL_PASS=your-app-password
 ```bash
 npm run dev
 ```
-Backend runs at: `https://backend-ecru-pi-97.vercel.app`
+Backend runs at: ['https://vercel.com/asibur-rahmans-projects/backend']
 
 ---
 
@@ -90,6 +90,7 @@ Backend runs at: `https://backend-ecru-pi-97.vercel.app`
 
 ### 1. Navigate to Frontend
 ```bash
+git clone https://github.com/asiburrahman/task
 cd frontend
 ```
 
@@ -102,7 +103,7 @@ npm install
 ```bash
 npm run dev
 ```
-Frontend runs at: `http://localhost:5173`
+Frontend runs at: `https://frolicking-brigadeiros-f3347c.netlify.app/`
 
 ---
 
@@ -164,7 +165,7 @@ Frontend runs at: `http://localhost:5173`
 
 ## 🚀 Deployment
 - **Backend**: Deploy on **Vercel**
-- **Frontend**: Deploy on **Vercel / Netlify**
+- **Frontend**: Deploy on **Netlify**
 - Update `CORS` and `origin` settings in `server.js` before deploying.
 
 ---
