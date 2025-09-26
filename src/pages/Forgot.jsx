@@ -1,19 +1,20 @@
 import React from 'react';
 import { FaArrowLeft } from "react-icons/fa";
+import { Link } from 'react-router';
 const Forgot = () => {
     return (
         <div className="min-h-screen w-[1440px] flex flex-col   bg-white">
             {/* Logo */}
             <div className=" top-6   left-0 px-12 py-6">
-                <img src="/images/reg-log.png" alt="ScapeSync Logo" className="w-[137px] h-[56px] " />
+                <img src="./images/reg-log.png" alt="ScapeSync Logo" className="w-[137px] h-[56px] " />
 
             </div>
 
             {/* Back link */}
-            <div className="w-full max-w-md mx-auto">
-                <button className="flex items-center text-green-600 text-sm mb-6">
+            <div className="w-full max-w-md mx-auto pt-20 mb-20">
+                <Link to='/login' className="flex items-center text-green-600 text-sm mb-6">
                     <FaArrowLeft className="mr-2" /> Back
-                </button>
+                </Link>
 
                 {/* Title */}
                 <h2 className="text-2xl font-semibold text-gray-800 mb-2">
@@ -35,17 +36,11 @@ const Forgot = () => {
                 </div>
 
                 {/* Verify Button */}
-                <button className="w-full py-3 bg-green-600 text-white font-medium rounded-md hover:bg-green-700 shadow-md">
-                    Verify
-                </button>
+                <Link to='/verification' className="w-full py-3 bg-green-600 text-white font-medium rounded-md hover:bg-green-700 shadow-md">
+                    Reset Password
+                </Link>
 
-                {/* Resend Code */}
-                <p className="mt-6 text-center text-sm text-gray-500">
-                    Don’t have a code?{" "}
-                    <button className="text-green-600 font-medium hover:underline">
-                        Reset Password
-                    </button>
-                </p>
+               
             </div>
         </div>
     );

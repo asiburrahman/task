@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
-import { FaGoogle } from "react-icons/fa";
 import { AiOutlineEye } from "react-icons/ai";
+import { Link, useNavigate } from "react-router";
+import { FaGoogle } from "react-icons/fa";
+import { ClipLoader } from "react-spinners"; // ✅ Spinner
 
 const Register = () => {
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false); // ✅ Spinner state
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -19,8 +24,7 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
-    
+
     if (formData.password !== formData.confirmPassword) {
       Swal.fire({
         icon: "error",
@@ -30,41 +34,47 @@ const Register = () => {
       return;
     }
 
+    setLoading(true); // ✅ Start loading
+
     try {
-      const res = await axios.post("http://localhost:3000/register", formData);
+      const res = await axios.post("https://backend-ecru-pi-97.vercel.app/register", formData);
 
       Swal.fire({
         icon: "success",
         title: "Registration Successful!",
-        text: res.data.message,
-        confirmButtonColor: "#16a34a", // green-600
+        text: "User registered! Please check your email for verification code.",
+        confirmButtonColor: "#16a34a",
+      }).then(() => {
+        navigate("/verification", { state: { formData } });
       });
+
     } catch (error) {
       Swal.fire({
         icon: "error",
         title: "Registration Failed",
         text: error.response?.data?.message || "Something went wrong",
       });
+    } finally {
+      setLoading(false); // ✅ Stop loading
     }
   };
 
   return (
-    <div className="min-h-screen w-[1440px] flex flex-col justify-center bg-white">
+    <div className="w-[1440px] min-h-screen flex flex-col items-center justify-center bg-white">
       {/* Logo */}
-      <div className="top-6 left-0 px-12 py-6">
+      <div className=" absolute top-0 left-0 px-12 py-6">
         <img
-          src="/images/reg-log.png"
+          src="./images/reg-log.png"
           alt="ScapeSync Logo"
           className="w-[137px] h-[56px]"
         />
       </div>
 
       {/* Form Container */}
-      <div className="w-full max-w-md text-center mx-auto">
+      <div className="w-full max-w-md text-center mb-20 pt-20 mx-auto">
         <h2 className="text-4xl font-bold text-gray-900">Create your Account</h2>
         <p className="text-gray-500 mt-1">When sports Meets smart Tech.</p>
 
-        {/* Form */}
         <form className="mt-8 space-y-4" onSubmit={handleSubmit}>
           <div className="flex space-x-2">
             <input
@@ -128,21 +138,39 @@ const Register = () => {
             <input type="checkbox" required className="accent-green-600" />
             <span>
               I agree to Tech Takes{" "}
-              <a href="#" className="text-blue-600 underline">
-                Terms of Service
-              </a>{" "}
-              and{" "}
-              <a href="#" className="text-blue-600 underline">
-                Privacy Policy
-              </a>.
+              <a href="#" className="text-blue-600 underline">Terms of Service</a> and{" "}
+              <a href="#" className="text-blue-600 underline">Privacy Policy</a>.
             </span>
           </div>
 
-          {/* Submit */}
-          <button className="w-full bg-green-600 text-white py-2 rounded-md hover:bg-green-700 transition">
-            Create Account
+          {/* Register Button with Spinner */}
+          <button
+            type="submit"
+            disabled={loading}
+            className="w-full bg-green-600 text-white py-2 rounded-md hover:bg-green-700 transition flex items-center justify-center"
+          >
+            {loading ? <ClipLoader size={20} color="#fff" /> : "Create Account"}
           </button>
         </form>
+
+        <div className="flex items-center my-6">
+          <div className="flex-grow h-px bg-gray-300"></div>
+          <span className="px-4 text-gray-500 text-sm">OR</span>
+          <div className="flex-grow h-px bg-gray-300"></div>
+        </div>
+
+        {/* Google Sign-in */}
+        <button className="w-full flex items-center justify-center text-black border rounded-md py-2 hover:bg-gray-50 transition">
+          <FaGoogle className="mr-2" /> Log in with Google
+        </button>
+
+        {/* Footer */}
+        <p className="text-sm text-gray-600 mt-6">
+          Already have an account?{" "}
+          <Link to="/login" className="text-green-600 font-medium">
+            Get started
+          </Link>
+        </p>
       </div>
     </div>
   );

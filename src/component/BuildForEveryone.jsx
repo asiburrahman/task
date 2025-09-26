@@ -8,7 +8,7 @@ const BuildForEveryone = () => {
         <div className="text-center mb-16">
          <div className='relative  w-[418px] h-[64px] mx-auto  mb-6'> 
             <h2 className="text-[48px] font-bold text-shadow text-black">Build for Everyone</h2>
-            <img src="/images/sign.png" alt="" className='absolute -right-4 bottom-[-12px] ' />
+            <img src="./images/sign.png" alt="" className='absolute -right-4 bottom-[-12px] ' />
          </div>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
             Whether you're booking services, managing tasks, or tracking
@@ -38,7 +38,7 @@ const BuildForEveryone = () => {
            
             <div className=" w-[610px] h-[516px] overflow-hidden relative ">
               <img
-                src="/images/user-app.png"
+                src="./images/user-app.png"
                 alt="Users App"
                 className="w-full"
               />
@@ -52,7 +52,7 @@ const BuildForEveryone = () => {
             
              <div className=" w-[610px] h-[516px] overflow-hidden relative ">
               <img
-                src="/images/business-app.png"
+                src="./images/business-app.png"
                 alt="Users App"
                 className="w-full"
               />
@@ -100,7 +100,7 @@ const BuildForEveryone = () => {
           </div>
            <div className=" w-[610px] h-[516px] overflow-hidden relative ">
               <img
-                src="/images/freelancer-app.png"
+                src="./images/freelancer-app.png"
                 alt="Users App"
                 className="w-full"
               />

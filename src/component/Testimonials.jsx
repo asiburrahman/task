@@ -5,19 +5,19 @@ const testimonials = [
     name: "Farzana H.",
     role: "Owner, CleanPro Services",
     text: "This app completely changed the way we manage our team. Assigning jobs takes minutes, and we never miss an update.",
-    img: "/images/user1.png",
+    img: "./images/user1.png",
   },
   {
     name: "Ahmed R.",
     role: "Technician",
     text: "I love how easy it is to see my daily tasks and track my time. It makes my job stress-free.",
-    img: "/images/user2.png",
+    img: "./images/user2.png",
   },
   {
     name: "Farzana H.",
     role: "Rafiq M., Homeowner",
     text: "As a client, I love being able to see exactly when my service is on the way. No calls, no guessing — just clear updates.",
-    img: "/images/user3.png",
+    img: "./images/user3.png",
   },
 ];
 
@@ -30,7 +30,7 @@ const Testimonials = () => {
         <p className="text-gray-500 w-[455px] h-[42px] mx-auto mt-2">
           Real stories from clients, employees, and business owners who use our app every day.
         </p>
-
+ 
         {/* Testimonials */}
         <div className="grid grid-cols-3 gap-6 mt-20">
           {testimonials.map((item, index) => (
