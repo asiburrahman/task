@@ -9,7 +9,7 @@ const Navbar = () => {
 
     useEffect(() => {
         // check session
-        axios.get("https://backend-ecru-pi-97.vercel.app/me")
+        axios.get("https://backend-ecru-pi-97.vercel.app/me", { withCredentials: true })
             .then(res => setUser(res.data))
             .catch(() => setUser(null));
     }, []);
@@ -22,7 +22,6 @@ const Navbar = () => {
         <nav className="w-[1440px] h-[100px] flex justify-between items-center px-[120px]  shadow-md bg-white">
             <div className="flex items-center gap-2">
                 <Link to='/'><img src="./images/logo.png" alt="Logo" className="w-[147px] h-[60px]" /></Link>
-                <span className="font-bold text-lg">ScapeSync</span>
             </div>
 
             <div>
